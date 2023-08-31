@@ -1,0 +1,640 @@
+/*
+Theme Name: newcss_4
+Theme URI: https://github.com/davidmytton/new.css-wordpress
+Author: David Mytton
+Author URI: https://davidmytton.blog
+Description: A lightweight, minimalist WordPress theme based on https://newcss.net. Autodetects and updates to light/dark mode based on the user setting.
+Tags: blog, one-column, custom-menu, featured-image-header, featured-images
+Version: 1.0.2
+Requires at least: 5.4
+Tested up to: 5.4
+Requires PHP: 7.0
+License: GPLv2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: newcss
+*/
+
+:root {
+    --nc-ac-1: #F5F6E8;
+    --nc-ac-2: #7BCFE9;
+    --nc-ac-3: #F37521;
+}
+
+textarea,
+select,
+input {
+    background: var(--nc-bg-1);
+    border: 1px solid var(--nc-tx-3);
+    border-radius: 5px;
+}
+
+aside {
+    background: var(--nc-ac-2);
+}
+
+
+/* Customisations to make new.css more suitable for blog content */
+
+img {
+    display: block;
+}
+
+.site-title {
+    width: 100%;
+}
+
+.site-title a {
+    text-decoration: none;
+}
+
+section a:hover {
+    color: var(--nc-lk-2);
+    text-decoration: none;
+}
+
+header .site-title a {
+    color: var(--nc-tx-1);
+    font-weight: bold;
+}
+
+@media (min-width: 1200px) {
+header .site-title a {
+	font-size: 150%;
+}
+}
+
+article h2 a {
+    color: var(--nc-tx-1);
+    text-decoration: none;
+}
+
+figcaption {
+    font-size: small;
+}
+
+img {
+    max-width: 100%!important;
+    height: auto;
+}
+
+iframe {
+    max-width: 100%;
+}
+
+
+/*
+Content Width Config
+https://codex.wordpress.org/Content_Width
+*/
+
+.size-auto,
+.size-full,
+.size-large,
+.size-medium,
+.size-thumbnail {
+    max-width: 100%;
+    height: auto;
+}
+
+
+/*
+WordPress Core
+https://codex.wordpress.org/CSS
+*/
+
+.alignnone {
+    margin: 5px 20px 20px 0;
+}
+
+.aligncenter,
+div.aligncenter {
+    display: block;
+    margin: 5px auto 5px auto;
+}
+
+.alignright {
+    float: right;
+    margin: 5px 0 20px 20px;
+}
+
+.alignleft {
+    float: left;
+    margin: 5px 20px 20px 0;
+}
+
+a img.alignright {
+    float: right;
+    margin: 5px 0 20px 20px;
+}
+
+a img.alignnone {
+    margin: 5px 20px 20px 0;
+}
+
+a img.alignleft {
+    float: left;
+    margin: 5px 20px 20px 0;
+}
+
+a img.aligncenter {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.wp-caption img {
+    border: 0 none;
+    height: auto;
+    margin: 0;
+    max-width: 98.5%;
+    padding: 0;
+    width: auto;
+}
+
+.wp-caption {
+    text-align: center;
+    font-size: 90%;
+    font-style: italic;
+}
+/*
+.wp-caption p.wp-caption-text {
+    font-size: 11px;
+    line-height: 17px;
+    margin: 0;
+    padding: 0 4px 5px;
+}*/
+
+.sticky {
+    color: red;
+}
+
+
+/*
+Text meant only for screen readers.
+https://make.wordpress.org/accessibility/handbook/markup/the-css-class-screen-reader-text/
+*/
+
+.screen-reader-text {
+    border: 0;
+    clip: rect(1px, 1px, 1px, 1px);
+    clip-path: inset(50%);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+    word-wrap: normal !important;
+}
+
+.screen-reader-text:focus {
+    background-color: #eee;
+    clip: auto !important;
+    clip-path: none;
+    color: #444;
+    display: block;
+    font-size: 1em;
+    height: auto;
+    left: 5px;
+    line-height: normal;
+    padding: 15px 23px 14px;
+    text-decoration: none;
+    top: 5px;
+    width: auto;
+    z-index: 100000;
+    /* Above WP toolbar. */
+}
+
+aside {
+    padding: var(--padding);
+    background-color: var(--nc-bg-2);
+    /*border: 1px solid var(--nc-border-3);
+    border-radius: var(--body-radius);*/
+}
+
+aside h3 {
+    border-bottom: 1px solid var(--nc-bg-3);
+}
+
+main {
+    max-width: 750px;
+    margin: 0 auto;
+    min-height: 600px;
+    padding: 0 22px;
+}
+
+.post-avatar {
+    float: left;
+    margin-right: 1rem;
+}
+
+.post-avatar img {
+    border-radius: 50%;
+    border: 1px solid var(--nc-lk-tx);
+}
+
+.next-prev-links {
+    margin-top: 0.5em;
+}
+
+.prev-link,
+.nav-older {
+    float: left;
+}
+
+.next-link,
+.nav-newer {
+    float: right;
+}
+
+.buttons {
+    font-size: 1.5em;
+}
+
+nav.top a {
+    display: block;
+    text-align: center;
+}
+
+nav.top .menu>li {
+    float: left;
+    margin: 0.2rem 1rem 0 0;
+}
+
+nav.top ul {
+    list-style: none;
+}
+
+nav.top ul {
+    position: relative;
+    display: inline-block;
+}
+
+nav.top .menu {
+    padding: 0;
+    margin: 0.5em 0 0 0;
+    font-weight: 500;
+}
+
+nav.top ul ul {
+    display: none;
+    position: absolute;
+    background-color: var(--nc-bg-3);
+    box-shadow: 3px 3px 3px black;
+    min-width: 160px;
+    padding: 10px 14px;
+    z-index: 1;
+}
+
+nav.top li:hover>ul,
+nav.top li:focus>ul {
+    display: block;
+}
+
+nav.top .menu-item-has-children>a::after {
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    content: " \f107";
+}
+
+.toggle,
+.social {
+    float: left;
+    padding-right: 0.5em;
+    cursor: pointer;
+}
+
+.toggle {
+    float: right;
+}
+
+.social__icon {
+    text-decoration: none;
+}
+
+.clearfix::after,
+.widget::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+@media (min-width: 768px) {
+    #toggleMenu, .toggleLeftMenu, .buttons {
+        display: none;
+    }
+}
+
+@media (max-width: 768px) {
+    .left-fullwidth {
+        display: none;
+    }
+    
+    .menu {
+        width: 100%;
+    }
+    .menu.top a {
+        padding: 0;
+        margin: 0;
+    }
+
+    .menu.left .sub-menu {
+        position: static;
+    }
+    
+    nav.top.open .menu {
+        display: block;
+    }
+    nav.top .menu li {
+        display: block;
+        text-align: center;
+        float: none;
+        margin: 0.2rem 0 0 0;
+    }
+    nav.top li.clicked ul {
+        display: block;
+        float: none;
+        position: static;
+        background-color: var(--nc-bg-2);
+    }
+    nav.top li.clicked ul li {
+        display: block;
+        float: none;
+        text-align: center;
+    }
+    /*nav.top>div {
+        display: block;
+        float: none;
+    }
+    nav.top .menu {
+        display: none;
+    }*/
+}
+
+.menu.left a.closeBtn,
+.menu.right a.closeBtn {
+    font-size: 2em;
+}
+
+.menu.left,
+.menu.right {
+    box-sizing: border-box;
+    height: 100%;
+    width: 0;
+    margin-left: -300px;
+    background-color: var(--nc-bg-2);
+    /* Black*/
+    overflow-x: hidden;
+    overflow-y: scroll;
+    padding-top: 30px;
+    transition: width 1s, margin-left 1s;
+}
+
+ul.menu {
+    padding-left: 10px;
+}
+
+.menu.left div {
+    box-sizing: border-box;
+    margin: 75px 0;
+}
+
+.menu.left {
+    left: 0;
+}
+
+nav.right {
+    right: 0;
+}
+
+.left.menu,
+.right.menu, .left.menu ul, .right.menu ul {
+    list-style: none;
+}
+
+.left.menu,
+.menu.left li,
+.right.menu,
+.menu.right li {
+    margin: 0;
+    padding: 0;
+}
+
+.menu.left .sub-menu {
+    padding-left: 0.5em;
+}
+
+.menu.left .sub-menu a::before {
+    content: "- ";
+}
+
+.menu.left,
+.menu.right {
+    width: 100%;
+    margin-left: 0;
+}
+
+body.left-open {
+    overflow: hidden;
+}
+
+
+/* The navigation menu links */
+
+.menu a {
+    text-decoration: none;
+    font-size: 12pt;
+    color: var(--nc-tx-3);
+    display: block;
+    transition: color 0.3s, padding-left 0.3s;
+}
+
+.left a {
+    text-decoration: none;
+    font-size: 14pt;
+    color: var(--nc-tx-3);
+    display: block;
+    transition: color 0.3s, padding-left 0.3s;
+}
+
+
+/* When you mouse over the navigation links, change their color */
+
+.menu a:hover {
+    color: var(--nc-tx-2);
+}
+
+.top .current-menu-item {
+    border-bottom: 3px solid #004d7a;
+}
+
+/* Position and style the close button (top right corner) */
+
+.menu.left .closeBtn,
+.menu.right .closeBtn {
+    position: absolute;
+    top: 15px;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+
+/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+
+@media screen and (max-height: 450px) {
+    .menu.left,
+    .menu.right {
+        padding-top: 30px;
+    }
+    .menu.left a,
+    .menu.right {
+        font-size: 18px;
+    }
+}
+
+.circle {
+    position: relative;
+    width: 150px;
+    height: 170px;
+    float: left;
+    margin-right: 15px;
+}
+
+.circle .img {
+    box-sizing: border-box;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    background-repeat: no-repeat;
+    /* Do not repeat the image */
+    background-image: linear-gradient(to right top, #051937, #004d7a, #008793, #00bf72, #a8eb12);
+    background-position: center;
+    /* Center the image */
+    border: 2px solid #eee;
+    background-size: auto 100%;
+    transition: background-size 2s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+}
+
+.circle .img:hover {
+    background-size: auto 120%;
+}
+
+.eXle2 {
+    position: absolute;
+    bottom: -10px;
+    cursor: pointer;
+    display: block;
+    overflow: hidden;
+    text-align: center;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 100%;
+}
+
+.eXle2 {
+    font-weight: 600;
+    padding-top: 15px;
+}
+
+@keyframes stroke-draw {
+    from {
+        stroke: #8a3ab9;
+        stroke-dasharray: 1;
+    }
+    to {
+        stroke: #cd486b;
+        transform: rotate(180deg);
+        stroke-dasharray: 8;
+    }
+}
+
+.footer {
+    margin-top: 2em;
+    padding-top: 75px;
+    padding-bottom: 50px;
+    color: #06112f;
+    font-weight: 300;
+    background-color: var(--nc-bg-2);
+}
+
+.footer .d {
+ 	max-width: 1040px;
+	margin: auto;	
+	padding-right: var(--bs-gutter-x,.75rem);
+	padding-left: var(--bs-gutter-x,.75rem);
+}
+
+.footer h2 {
+	padding-top: 0;
+	margin-top: 0;
+}
+
+.text-left {
+    text-align: left!important;
+}
+
+.no-gutters {
+    margin-right: 0;
+    margin-left: 0;
+}
+
+.footer .social-area .social .icons {
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+}
+
+.footer .social-area .social .text {
+    display: inline-block;
+    margin-left: 3px;
+}
+
+.footer .social-area .social .text {
+    display: inline-block;
+    margin-left: 3px;
+}
+
+.footer .social-area .social .text a {
+    color: #06112f;
+    font-size: 17px;
+    font-weight: 300;
+    text-decoration: none;
+}
+
+.footer .social-area .social .text a:hover {
+    text-decoration: underline;
+}
+
+.web-stories-list {
+    width: 100%;
+    margin: 0!important;
+}
+
+.web-stories-list .story-content-overlay__excerpt,
+.web-stories-list .story-content-overlay__title {
+    -webkit-line-clamp: 4!important;
+}
+
+.web-stories-list__story-poster {
+    background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.4));
+}
+
+.web-stories-list__story img {
+    z-index: -1;
+    transition: width 2s cubic-bezier(0.455, 0.03, 0.515, 0.955), height 2s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+}
+
+.web-stories-list__story:hover img {
+    width: 150%;
+    height: 150%;
+}
+
+amp-img {
+    display: inline-block;
+}

@@ -1,0 +1,142 @@
+header {
+    background-color: var(--nc-bg-2);
+}
+
+.h-portfolio {
+    display: flex;
+    flex-direction: row;
+    justify-items: center;
+}
+
+@media (max-width: 800px) {
+    .h-portfolio {
+        flex-direction: column;
+    }
+}
+
+.h-block {
+    padding: 1em;
+}
+
+.h-number, .h-description {
+    display: block;
+    text-align: center;
+}
+
+.h-number {
+    font-size: 200%;
+}
+
+.h-description {
+    font-style: italic;
+}
+
+.views-counter {
+    font-style: italic;
+    font-size: 85%;
+    text-align: right;
+}
+
+#wrapper .sleeve_main.full-width {
+    width: 100%!important;
+    max-width: 1024px;
+}
+
+.languageswap {
+	list-style: none;
+    padding: 0;
+    margin-right: 0.9em;
+}
+
+.languageswap li {
+    float: left;
+    margin-right: 0.1em;
+    padding-top: 0.1em;
+}
+
+.languageswap, .languageswap * {
+    margin-bottom: 0;
+}
+
+.searchform {
+    margin: 0;
+    float: right;
+}
+
+.flex-right {
+    flex-grow: 1;
+}
+
+.site-title-container, .site-description-container {
+	text-align: center;
+	margin-bottom: 5px;
+}
+
+.left-fullwidth {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+@media (max-width: 1200px) {
+	.site-description-container {
+		display: none;
+	}
+}
+
+@media (min-width: 1440px) {
+	.left-fullwidth {
+	width: 50%;
+    margin: 0 auto;
+	}
+}
+
+#revue-form {
+    margin-top: 0.5em;
+    padding: 1em;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.revue-form-group {
+    margin-right: 0.5em;
+}
+
+.avatar {
+	display: block;
+	width: 200px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 1em;
+}
+
+
+amp-sidebar[side][i-amphtml-sidebar-opened] {
+    transform: none;
+    animation: none;
+}
+
+amp-sidebar {
+    --story-page-vh: 1vh;
+    position: fixed!important;
+    top: 0;
+    max-height: 100vh!important;
+    height: 100vh;
+    max-width: 80vw;
+    background-color: #efefef;
+    min-width: 45px!important;
+    outline: none;
+    overflow-x: hidden!important;
+    overflow-y: auto!important;
+    z-index: 1;
+    -webkit-overflow-scrolling: touch;
+    will-change: transform;
+}
+
+amp-sidebar[side=left] {
+    left: 0!important;
+    transform: translateX(-100%);
+    animation-name: i-amphtml-sidebar-slide-out-left;
+}
