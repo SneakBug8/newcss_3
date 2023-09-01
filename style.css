@@ -57,10 +57,16 @@ header .site-title a {
     font-weight: bold;
 }
 
-@media (min-width: 1200px) {
+@media (min-width: 1072px) {
 header .site-title a {
 	font-size: 150%;
 }
+}
+
+@media (max-width: 1072px) {
+	.site-description-container {
+        display: none;
+    }
 }
 
 article h2 a {

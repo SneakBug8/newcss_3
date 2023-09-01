@@ -3,8 +3,7 @@
     <small>
         <p><?php _e('Published', 'newcss'); ?>
             <time><?php the_date(); ?></time><?php if (get_the_modified_date() > get_the_date()) : ?>
-                (<?php _e('updated', 'newcss'); ?>: <time><?php the_modified_date(); ?></time>)<?php endif; ?>
-                <?php _e('in', 'newcss'); ?> <?php the_category(', '); ?>. <?php if (has_tag()) : ?>
+                (<?php _e('updated', 'newcss'); ?>: <time><?php the_modified_date(); ?></time>)<?php endif; ?><?php if(has_category()) { echo " "; _e('in', 'newcss'); echo " "; the_category(', '); } ?>. <?php if (has_tag()) : ?>
                     <?php the_tags(); ?>.<?php endif; ?>
         </p>
     </small>
@@ -23,7 +22,7 @@
     }
     ?>
     <section>
-        <?php if ( /*is_home() ||*/is_single()) {
+        <?php if ( /*is_home() ||*/is_single() || is_page()) {
             p2_content(); ?>
 
             <?php /* _e('Any questions left?', 'newcss') ?>
@@ -44,7 +43,7 @@
         <?php if (is_single()) { ?>
             <?php /* <aside>
                 <?php
-                if (!is_page()) : ?>
+                if (is_single()) : ?>
                     <a class="post-avatar">
                         <?php echo get_avatar(get_the_author_meta('user_email'), 48); ?>
                     </a>

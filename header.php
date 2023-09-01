@@ -15,7 +15,7 @@
     <meta charset="<?php bloginfo('charset'); ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <?php wp_head(); ?>
-
+    <script src="/publish/noamp.js"></script>
     <script async custom-element="amp-sidebar" src="https://cdn.ampproject.org/v0/amp-sidebar-0.1.js"></script>
 </head>
 
@@ -25,14 +25,15 @@
         <a class="screen-reader-text skip-link" href="#content"><?php _e('Skip to content', 'newcss'); ?></a>
         <div class="clearfix site-title-container">
             <span class="site-title"><a href="<?php echo esc_url(home_url('/')); ?>" rel="home"><?php bloginfo('name'); ?></a>
-				<a class="toggle toggleLeftMenu" on="tap:sidebar1.toggle"> <i class="fa fa-bars"></i>
+				<a class="toggle toggleLeftMenu open" on="tap:sidebar1.toggle"> <i class="fa fa-bars"></i>
+            </a>
 			</span>
         </div>
+        
 		<div class="clearfix site-description-container">
 			<span class="site-description"><?php bloginfo('description'); ?></span>
         </div>
         <div class="buttons clearfix">
-            </a>
             <!-- <?php if (has_nav_menu('left')) : ?>
                 <a class="toggle toggleLeftMenu"><i class="fa fa-bars"></i></a>
             <?php endif; ?>
@@ -91,7 +92,7 @@
 	    <?php endif; ?> -->
     </header>
     <amp-sidebar id="sidebar1" class="menu left" layout="nodisplay" side="left">
-        <a class="closeBtn toggleLeftMenu" on="tap:sidebar1.close"><i class="fa fa-times"></i></a>
+        <a class="closeBtn toggleLeftMenu close" on="tap:sidebar1.close"><i class="fa fa-times"></i></a>
         <?php
         wp_nav_menu(
             array(

@@ -94,9 +94,12 @@ if (!function_exists('newcss_setup')) {
 		register_nav_menu('left', 'Left Menu');
 		register_nav_menu('right', 'Right Menu');
 
+		register_nav_menu('post-1', 'Post sidebar');
+
+
 		add_theme_support('post-formats', p2_get_supported_post_formats('post-format'));
 
-		add_rewrite_rule('wiki[/]*', 'index.php?page_id=2498', 'top');
+		// add_rewrite_rule('wiki[/]*', 'index.php?page_id=2498', 'top');
 	}
 }
 

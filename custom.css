@@ -79,15 +79,9 @@ header {
     align-items: center;
 }
 
-@media (max-width: 1200px) {
-	.site-description-container {
-		display: none;
-	}
-}
-
-@media (min-width: 1440px) {
+@media (min-width: 1072px) {
 	.left-fullwidth {
-	width: 50%;
+	width: 80%;
     margin: 0 auto;
 	}
 }
@@ -113,12 +107,12 @@ header {
 }
 
 
-amp-sidebar[side][i-amphtml-sidebar-opened] {
+.noamp amp-sidebar[side][i-amphtml-sidebar-opened] {
     transform: none;
     animation: none;
 }
 
-amp-sidebar {
+.noamp amp-sidebar {
     --story-page-vh: 1vh;
     position: fixed!important;
     top: 0;
@@ -135,8 +129,16 @@ amp-sidebar {
     will-change: transform;
 }
 
-amp-sidebar[side=left] {
+.noamp amp-sidebar[side=left] {
     left: 0!important;
     transform: translateX(-100%);
     animation-name: i-amphtml-sidebar-slide-out-left;
+}
+
+.wpel-icon {
+    margin-left: 3px;
+}
+
+.fa-external-link {
+    margin-left: 3px;
 }

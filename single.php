@@ -19,7 +19,7 @@ get_header(); ?>
 
         <?php if ( is_single()) : ?>
             <?php if ( is_active_sidebar( 'post-1' ) ) : ?>
-                <?php dynamic_sidebar( 'post-1' ); ?>
+                <?php // dynamic_sidebar( 'post-1' ); ?>
             <?php endif; ?>
         <?php endif; ?>
 
